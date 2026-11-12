@@ -10,6 +10,8 @@ def get_num_words(text: str) -> int:
 def get_chars_count(text) -> dict[str, int]:
     count_dict: dict[str, int] = {}
     for char in text:
+        if not char.isalpha():
+            continue
         if char.lower() not in count_dict:
             count_dict[char.lower()] = 1
         else:

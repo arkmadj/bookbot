@@ -17,4 +17,12 @@ def get_chars_count(text) -> dict[str, int]:
 
     return count_dict
     
+def sort_on(count: tuple[str, int]) -> int:
+    return count[1]
 
+def chars_dict_to_sorted_list(counts: dict[str, int]) -> list[tuple[str, int]]:
+    count_list: list[tuple[str, int]] = []
+    for char in counts:
+        count = counts[char]
+        count_list.append((char, count))
+    return sorted(count_list, reverse=True, key=sort_on)
